@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
+using Epoxy.Api;
+using Epoxy.Utility;
 using Newtonsoft.Json;
 
-namespace epoxy
+namespace Epoxy
 {
     class Program
     {
@@ -30,8 +36,22 @@ namespace epoxy
             }
 
             Configuration config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(configurationJsonFilePath));
+            (bool configIsValid, string message) = config.Validate();
+            if (!configIsValid)
+            {
+                if (!message.IsNullOrEmpty())
+                {
+                    Console.WriteLine($"Invalid configuration: {message}");
+                }
 
-            Console.WriteLine("Hello Epoxy!");
+                return;
+            }
+
+            Graph graph = GraphLoader.LoadGraph(Directory.EnumerateFiles(config.DoxygenXmlDirectory).Where(file => Path.GetExtension(file) == ".xml"));
+
+            // Generate bindings using binders
+
+            Console.WriteLine("SUCCESS");
         }
     }
 }

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structtest_1_1api_1_1test__struct" kind="struct" language="C++" prot="public">
+    <compoundname>test::api::test_struct</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtest_1_1api_1_1test__struct_1a39a18b2706d8da8ca6654be29901460b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int test::api::test_struct::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="test_api.h" line="36" column="1" bodyfile="test_api.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtest_1_1api_1_1test__struct_1a5641bba4d65d6d159e2555656b1669d2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int test::api::test_struct::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="test_api.h" line="37" column="1" bodyfile="test_api.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtest_1_1api_1_1test__struct_1a2966ccafd56a40edd6bc95d26c75448a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>test::api::test_struct::test_struct</definition>
+        <argsstring>()=default</argsstring>
+        <name>test_struct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="test_api.h" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structtest_1_1api_1_1test__struct_1a3713fceb892b40d131e2716d541bc857" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>test::api::test_struct::test_struct</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>test_struct</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="test_api.h" line="30" column="1" bodyfile="test_api.h" bodystart="30" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="test_api.h" line="27" column="1" bodyfile="test_api.h" bodystart="26" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structtest_1_1api_1_1test__struct_1a2966ccafd56a40edd6bc95d26c75448a" prot="public" virt="non-virtual"><scope>test::api::test_struct</scope><name>test_struct</name></member>
+      <member refid="structtest_1_1api_1_1test__struct_1a3713fceb892b40d131e2716d541bc857" prot="public" virt="non-virtual"><scope>test::api::test_struct</scope><name>test_struct</name></member>
+      <member refid="structtest_1_1api_1_1test__struct_1a39a18b2706d8da8ca6654be29901460b" prot="public" virt="non-virtual"><scope>test::api::test_struct</scope><name>x</name></member>
+      <member refid="structtest_1_1api_1_1test__struct_1a5641bba4d65d6d159e2555656b1669d2" prot="public" virt="non-virtual"><scope>test::api::test_struct</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

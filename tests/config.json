@@ -1,0 +1,7 @@
+{
+    "languages" : [
+        "c#"
+    ],
+    "explicit" : true,
+    "doxygenXmlDirectory" : "tests/cpp/bindings/xml"
+}
