@@ -32,44 +32,41 @@ namespace Epoxy.Utility
                 {
                     case "class":
                     case "struct":
-                        Class newClass = ProcessNamedApiContainer<Class>(mainNode);
+                        Class newClass = ProcessClass(mainNode);
                         graph.Classes.Add(newClass);
                         break;
                     case "namespace":
-                        Namespace newNamespace = ProcessNamedApiContainer<Namespace>(mainNode);
-                        graph.Namespaces.Add(newNamespace);
-                        break;
-                    case "file":
-                        ProcessMembers(graph, mainNode);
+                        string namespaceName = Xml.GetCompoundNodeName(mainNode);
+                        ProcessMembers(graph, mainNode, namespaceName);
                         break;
                     default:
                         break;
-                   
                 }
             }
         }
 
-        private static T ProcessNamedApiContainer<T>(XmlNode node) where T : NamedApiContainer
+        private static Class ProcessClass(XmlNode node)
         {
             string id = Xml.GetId(node);
-            string name = Xml.GetCompoundNodeName(node);
-            T newApiContainer = System.Activator.CreateInstance(typeof(T), new object []{ id, name }) as T;
+            string fullName = Xml.GetCompoundNodeName(node);
+            string namespaceName = GetNamespaceFromFullyQualifiedName(fullName);
+            Class classDefinition = new Class(id, GetNameFromFullyQualifiedName(fullName), namespaceName);
 
-            ProcessMembers(newApiContainer, node);
-            return newApiContainer;
+            ProcessMembers(classDefinition, node, namespaceName);
+            return classDefinition;
         }
 
-        private static void ProcessMembers(ApiContainer apiContainer, XmlNode node)
+        private static void ProcessMembers(ApiContainer apiContainer, XmlNode node, string namespaceName)
         {
             foreach (XmlNode memberNode in GetMemberNodes(node))
             {
                 switch (Xml.GetKind(memberNode))
                 {
                     case Xml.Function:
-                        ProcessFunction(apiContainer, memberNode);
+                        ProcessFunction(apiContainer, memberNode, namespaceName);
                         break;
                     case Xml.Variable:
-                        ProcessVariable(apiContainer, memberNode);
+                        ProcessVariable(apiContainer, memberNode, namespaceName);
                         break;
                     default:
                         // This can only happen if GetMemberNodes is broken.
@@ -78,7 +75,7 @@ namespace Epoxy.Utility
             }
         }
 
-        private static void ProcessFunction(ApiContainer apiContainer, XmlNode memberNode)
+        private static void ProcessFunction(ApiContainer apiContainer, XmlNode memberNode, string namespaceName)
         {
             List<NamedElement> parameters = new List<NamedElement>();
             foreach (XmlNode parameterNode in memberNode.SelectNodes(Xml.Param))
@@ -87,16 +84,17 @@ namespace Epoxy.Utility
             }
 
             Element returnType = GetElement(memberNode);
-
-            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), Xml.GetName(memberNode), returnType, Xml.GetIsConstant(memberNode), parameters.AsReadOnly()));
+            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, Xml.GetName(memberNode), returnType, Xml.GetIsConstant(memberNode), parameters.AsReadOnly()));
         }
 
-        private static void ProcessVariable(ApiContainer apiContainer, XmlNode memberNode)
+        private static void ProcessVariable(ApiContainer apiContainer, XmlNode memberNode, string namespaceName)
         {
-            NamedElement variable = GetNamedElement(memberNode);
-            if (variable != null)
+            NamedElement namedElement = GetNamedElement(memberNode);
+            if (namedElement != null)
             {
-                apiContainer.Variables.Add(variable);
+                apiContainer.Variables.Add(new Variable(namespaceName, namedElement.Name, namedElement.Type,
+                    namedElement.UnresolvedTypeInfo, namedElement.IsConstant, namedElement.IsReference,
+                    namedElement.IsRawPointer, namedElement.IsSharedPointer, namedElement.IsUniquePointer));
             }
         }
 
@@ -176,6 +174,18 @@ namespace Epoxy.Utility
             string name = Xml.GetName(node) ?? Xml.GetDeclname(node);
 
             return new NamedElement(name, element.Type, element.UnresolvedTypeInfo, element.IsConstant, element.IsRawPointer, element.IsReference, element.IsSharedPointer, element.IsUniquePointer);
+        }
+
+        private static string GetNameFromFullyQualifiedName(string fullName)
+        {
+            int index = fullName.LastIndexOf("::");
+            return index != -1 ? fullName.Substring(index + 2, fullName.Length - (index + 2)) : fullName;
+        }
+
+        private static string GetNamespaceFromFullyQualifiedName(string fullName)
+        {
+            int index = fullName.LastIndexOf("::");
+            return index != -1 ? fullName.Substring(0, index) : string.Empty;
         }
 
         private static readonly string[] c_ignoredQualifiers = new string[]{ "volatile", "mutable" };

@@ -4,9 +4,10 @@ namespace Epoxy.Api
 {
     public class Function
     {
-        public Function (string id, string name, Element returnType, bool isConstant, ReadOnlyCollection<NamedElement> parameters)
+        public Function (string id, string namespaceName, string name, Element returnType, bool isConstant, ReadOnlyCollection<NamedElement> parameters)
         {
             Id = id;
+            Namespace = namespaceName;
             Name = name;
             Return = returnType;
             IsConstant = isConstant;
@@ -14,6 +15,7 @@ namespace Epoxy.Api
         }
 
         public string Id { get; private set; }
+        public string Namespace { get; private set; }
         public string Name { get; private set; }
         public Element Return { get; private set; }
         public bool IsConstant { get; private set; }
