@@ -18,18 +18,18 @@ namespace Epoxy
             const string usageMessage = "Usage:\nepoxy <configuration json file>";
             if (args.Length != 1 || args[0] == "-h" || args[0] == "--help")
             { 
-                Console.WriteLine(usageMessage);
+                Console.Error.WriteLine(usageMessage);
                 return;
             }
 
             string configurationJsonFilePath = args[0];
             if (!File.Exists(configurationJsonFilePath))
             {
-                Console.WriteLine($"Configuration file '{configurationJsonFilePath}' does not exist.");
+                Console.Error.WriteLine($"Configuration file '{configurationJsonFilePath}' does not exist.");
 
                 if (!Path.IsPathRooted(configurationJsonFilePath))
                 {
-                    Console.WriteLine($"Path appears to be relative and the current working directory is '{Directory.GetCurrentDirectory()}'.");
+                    Console.Error.WriteLine($"Path appears to be relative and the current working directory is '{Directory.GetCurrentDirectory()}'.");
                 }
 
                 return;
@@ -41,7 +41,7 @@ namespace Epoxy
             {
                 if (!message.IsNullOrEmpty())
                 {
-                    Console.WriteLine($"Invalid configuration: {message}");
+                    Console.Error.WriteLine($"Invalid configuration: {message}");
                 }
 
                 return;
