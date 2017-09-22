@@ -63,6 +63,8 @@
     <member refid="dummy_1a520de82f59bc7d8eb8ee65825bdbeecea291554596c183e837f0a6bec3767c891" kind="enumvalue"><name>PAUSE</name></member>
     <member refid="dummy_1a520de82f59bc7d8eb8ee65825bdbeeceaf302817a1a3baa8f5aef592bda7c0adc" kind="enumvalue"><name>REWIND</name></member>
     <member refid="dummy_1a520de82f59bc7d8eb8ee65825bdbeeceafe48dc1aa055edc05bb3f1db44bf9e3f" kind="enumvalue"><name>FAST_FORWARD</name></member>
+    <member refid="test__api_8h_1a01773bba656e02021c5a7ef5ff5f260b" kind="variable"><name>c_theAnswer</name></member>
+    <member refid="test__api_8h_1a40e19f7f6920dbc45e0fd8ebd1ed8257" kind="function"><name>hello_person</name></member>
   </compound>
   <compound refid="test__api_8h" kind="file"><name>test_api.h</name>
   </compound>

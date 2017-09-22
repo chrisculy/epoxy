@@ -119,5 +119,13 @@ namespace api
         test_struct m_struct;
         const test_struct m_constStruct = test_struct{ 3, 9 };
     };
+
+    int hello_person(const std::string & person)
+    {
+        std::cout << "Hello " << person << "\n";
+        return 12;
+    }
+
+    const uint8_t c_theAnswer = 42;
 }
 }
