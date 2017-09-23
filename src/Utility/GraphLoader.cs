@@ -84,7 +84,9 @@ namespace Epoxy.Utility
             }
 
             Element returnType = GetElement(memberNode);
-            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, Xml.GetName(memberNode), returnType, Xml.GetIsConstant(memberNode), parameters.AsReadOnly()));
+            string name = Xml.GetName(memberNode);
+            bool isConstructor = apiContainer is NamedApiContainer namedApiContainer && namedApiContainer.Name == name;
+            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, name, returnType, Xml.GetIsConstant(memberNode), isConstructor, parameters.AsReadOnly()));
         }
 
         private static void ProcessVariable(ApiContainer apiContainer, XmlNode memberNode, string namespaceName)
