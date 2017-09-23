@@ -85,7 +85,7 @@ namespace Epoxy.Utility
 
             Element returnType = GetElement(memberNode);
             string name = Xml.GetName(memberNode);
-            bool isConstructor = apiContainer is NamedApiContainer namedApiContainer && namedApiContainer.Name == name;
+            bool isConstructor = apiContainer is Class classDefinition && classDefinition.Name == name;
             apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, name, returnType, Xml.GetIsConstant(memberNode), isConstructor, parameters.AsReadOnly()));
         }
 
