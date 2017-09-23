@@ -2,7 +2,7 @@ namespace Epoxy
 {
     public class Configuration
     {
-        public string[] Languages { get; set; }
+        public BinderConfiguration[] Binders { get; set; }
         public bool Explicit { get; set; }
         public string DoxygenXmlDirectory { get; set; }
     }

@@ -8,11 +8,11 @@ namespace Epoxy.Utility
     {
         public static (bool isValid, string message) Validate(this Configuration configuration)
         {
-            foreach (string language in configuration.Languages)
+            foreach (BinderConfiguration binderConfig in configuration.Binders)
             {
-                if (!c_supportedLanguages.Contains(language))
+                if (!c_supportedLanguages.Contains(binderConfig.Language))
                 {
-                    return (false, $"'{language}' is not a supported language ('{c_supportedLanguages.Join(", ")}').");
+                    return (false, $"'{binderConfig.Language}' is not a supported language ('{c_supportedLanguages.Join(", ")}').");
                 }
             }
 

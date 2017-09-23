@@ -1,6 +1,12 @@
 {
-    "languages" : [
-        "c#"
+    "binders" : [
+        {
+            "language" : "c#",
+            "nativeBindingsDirectory" : "tests/cs/native",
+            "languageBindingsDirectory" : "tests/cs/managed",
+            "globalsClassName" : "TestApi",
+            "dllFileName" : "test_api.dll"
+        }
     ],
     "explicit" : true,
     "doxygenXmlDirectory" : "tests/cpp/bindings/xml"

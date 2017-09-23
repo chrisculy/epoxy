@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using Epoxy.Api;
+using Epoxy.Binders;
 using Epoxy.Utility;
 using Newtonsoft.Json;
 
@@ -48,8 +49,18 @@ namespace Epoxy
             }
 
             Graph graph = GraphLoader.LoadGraph(Directory.EnumerateFiles(config.DoxygenXmlDirectory).Where(file => Path.GetExtension(file) == ".xml"));
+            foreach (BinderConfiguration binderConfig in config.Binders)
+            {
+                IBinder binder = BinderFactory.GetBinder(binderConfig);
+                if (binder == null)
+                {
+                    Console.WriteLine($"Warning: language '{binderConfig.Language}' currently does not have a binder implemented-skipping.");
+                    continue;
+                }
 
-            // Generate bindings using binders
+                binder.GenerateNativeBindings(graph);
+                binder.GenerateLanguageBindings(graph);
+            }
 
             Console.WriteLine("SUCCESS");
         }
