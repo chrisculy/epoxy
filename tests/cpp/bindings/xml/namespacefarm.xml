@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="namespacefarm" kind="namespace" language="C++">
+    <compoundname>farm</compoundname>
+    <innerclass refid="classfarm_1_1animal" prot="public">farm::animal</innerclass>
+    <innerclass refid="classfarm_1_1barn" prot="public">farm::barn</innerclass>
+    <innerclass refid="classfarm_1_1cat" prot="public">farm::cat</innerclass>
+    <innerclass refid="classfarm_1_1cow" prot="public">farm::cow</innerclass>
+    <innerclass refid="classfarm_1_1dog" prot="public">farm::dog</innerclass>
+    <innerclass refid="classfarm_1_1farm" prot="public">farm::farm</innerclass>
+    <innerclass refid="classfarm_1_1farmer" prot="public">farm::farmer</innerclass>
+    <innerclass refid="classfarm_1_1horse" prot="public">farm::horse</innerclass>
+    <innerclass refid="structfarm_1_1location" prot="public">farm::location</innerclass>
+    <innernamespace refid="namespacefarm_1_1statistics">farm::statistics</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9" prot="public" static="no">
+        <name>barn_state</name>
+        <enumvalue id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9a3a0635146c2072f79770cb83a21662de" prot="public">
+          <name>EMPTY</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9a2e00b2ea2c39cef01235c01f2d17d9e2" prot="public">
+          <name>ONE_QUARTER_FULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9a1abc433bfc9004730c2008268999d18c" prot="public">
+          <name>HALF_FULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9a4cd8463a6d96fde7fb1af6010800d1d7" prot="public">
+          <name>THREE_QUARTER_FULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="barn__state_8h_1a137b315062d236b2e1c31b4d2456a8a9a214f48b93100ba6f2271acce61cb8dcd" prot="public">
+          <name>FULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn_state.h" line="4" column="1" bodyfile="barn_state.h" bodystart="3" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="enum" id="farm__state_8h_1a1e427bbb1c738c4aa3e50e9cb340673f" prot="public" static="no">
+        <name>farm_state</name>
+        <enumvalue id="dummy_1a1e427bbb1c738c4aa3e50e9cb340673fa73bb7ef2640f72feb61a8d86f7a75243" prot="public">
+          <name>TILLING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a1e427bbb1c738c4aa3e50e9cb340673fa9a48487834367146621dcff7f2b48d25" prot="public">
+          <name>PLANTING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a1e427bbb1c738c4aa3e50e9cb340673fa53a5c6962088d681882494048d2f0817" prot="public">
+          <name>GROWING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a1e427bbb1c738c4aa3e50e9cb340673fa5dac1dceb1244093a7615e7cb6ef8cfe" prot="public">
+          <name>HARVESTING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1a1e427bbb1c738c4aa3e50e9cb340673fa7dd6078d750ad27f0ad82e1c27f6c77c" prot="public">
+          <name>RESTING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="farm_state.h" line="4" column="1" bodyfile="farm_state.h" bodystart="3" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="farm_8h_1a57ca1cb6473b4c095794e1862f333fa2" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double farm::c_acres_per_hectare</definition>
+        <argsstring></argsstring>
+        <name>c_acres_per_hectare</name>
+        <initializer>= 2.47105</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="farm.h" line="46" column="1" bodyfile="farm.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="farm_8h_1a6bafcff881d19cbe8593a2c893f99534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string farm::to_string</definition>
+        <argsstring>(const farm &amp;farm)</argsstring>
+        <name>to_string</name>
+        <param>
+          <type>const <ref refid="classfarm_1_1farm" kindref="compound">farm</ref> &amp;</type>
+          <declname>farm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="farm.h" line="39" column="1" bodyfile="farm.h" bodystart="39" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="animal.h" line="2" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="farmer_8h" kind="file" language="C++">
+    <compoundname>farmer.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="farm_8h" local="yes">farm.h</includedby>
+    <incdepgraph>
+      <node id="49">
+        <label>string</label>
+      </node>
+      <node id="48">
+        <label>farmer.h</label>
+        <link refid="farmer_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="52">
+        <label>report.h</label>
+        <link refid="report_8h_source"/>
+      </node>
+      <node id="50">
+        <label>farmer.h</label>
+        <link refid="farmer_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>farm.h</label>
+        <link refid="farm_8h_source"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfarm_1_1farmer" prot="public">farm::farmer</innerclass>
+    <innernamespace refid="namespacefarm">farm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="farmer.h"/>
+  </compounddef>
+</doxygen>

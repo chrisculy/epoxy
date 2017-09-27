@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="farm__state_8h" kind="file" language="C++">
+    <compoundname>farm_state.h</compoundname>
+    <includedby refid="farm_8h" local="yes">farm.h</includedby>
+    <invincdepgraph>
+      <node id="47">
+        <label>report.h</label>
+        <link refid="report_8h_source"/>
+      </node>
+      <node id="45">
+        <label>farm_state.h</label>
+        <link refid="farm__state_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>farm.h</label>
+        <link refid="farm_8h_source"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacefarm">farm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="farm_state.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="barn__state_8h" kind="file" language="C++">
+    <compoundname>barn_state.h</compoundname>
+    <includedby refid="barn_8h" local="yes">barn.h</includedby>
+    <invincdepgraph>
+      <node id="17">
+        <label>report.h</label>
+        <link refid="report_8h_source"/>
+      </node>
+      <node id="15">
+        <label>barn.h</label>
+        <link refid="barn_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>farm.h</label>
+        <link refid="farm_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>barn_state.h</label>
+        <link refid="barn__state_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacefarm">farm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="barn_state.h"/>
+  </compounddef>
+</doxygen>

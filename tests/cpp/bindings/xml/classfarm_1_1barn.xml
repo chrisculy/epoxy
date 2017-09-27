@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="classfarm_1_1barn" kind="class" language="C++" prot="public">
+    <compoundname>farm::barn</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfarm_1_1barn_1a72bce45fbad21fdf089c0663dd668225" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string farm::barn::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="29" column="1" bodyfile="barn.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfarm_1_1barn_1af18f8535412e8feb7fe74c404d0bbbec" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classfarm_1_1animal" kindref="compound">animal</ref> * &gt;</type>
+        <definition>std::vector&lt;animal*&gt; farm::barn::_animals</definition>
+        <argsstring></argsstring>
+        <name>_animals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="30" column="1" bodyfile="barn.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfarm_1_1barn_1a867d5d647dfed9a0ce51f0374d0b9f1f" prot="private" static="no" mutable="no">
+        <type>barn_state</type>
+        <definition>barn_state farm::barn::_state</definition>
+        <argsstring></argsstring>
+        <name>_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="31" column="1" bodyfile="barn.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfarm_1_1barn_1a7efecb317f2d04c3bfd9f3141e96ee43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::barn::barn</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>barn</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="11" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1addbfb7c31836f57ebb8af9d9281660ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::barn::barn</definition>
+        <argsstring>(const char16_t *name)</argsstring>
+        <name>barn</name>
+        <param>
+          <type>const char16_t *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a579b61b466ffb4b78bcab7c901723526" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::barn::barn</definition>
+        <argsstring>(const char32_t *name)</argsstring>
+        <name>barn</name>
+        <param>
+          <type>const char32_t *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1ab419f6f0494e4e09ff9090dec24db855" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void farm::barn::set_state</definition>
+        <argsstring>(barn_state state)</argsstring>
+        <name>set_state</name>
+        <param>
+          <type>barn_state</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="17" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a5a4ddaa1a7edabc304d43cc12a02657b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>barn_state</type>
+        <definition>barn_state farm::barn::get_state</definition>
+        <argsstring>() const</argsstring>
+        <name>get_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1acb65d249d948a2bdb055a4f4206b6867" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* farm::barn::get_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a78ee3671a9b6669ac1aa20194fc82dad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char16_t *</type>
+        <definition>const char16_t* farm::barn::get_name_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a659b1be163b425b5205bedebd8148cf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char32_t *</type>
+        <definition>const char32_t* farm::barn::get_name_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a4d4c1c03228e98296786e0d18da6ff76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void farm::barn::add_animal</definition>
+        <argsstring>(animal *animal)</argsstring>
+        <name>add_animal</name>
+        <param>
+          <type><ref refid="classfarm_1_1animal" kindref="compound">animal</ref> *</type>
+          <declname>animal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1barn_1a89beec6d641c7719f6aa523cf25f7877" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classfarm_1_1animal" kindref="compound">animal</ref> * &gt;</type>
+        <definition>const std::vector&lt;animal*&gt; farm::barn::get_animals</definition>
+        <argsstring>() const</argsstring>
+        <name>get_animals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="25" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classfarm_1_1barn_1aa9b69c84c995b0a654d61dd94b9ae7a1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classfarm_1_1barn" kindref="compound">barn</ref> &gt;</type>
+        <definition>static std::unique_ptr&lt;barn&gt; farm::barn::create_with_animals</definition>
+        <argsstring>(std::vector&lt; animal *&gt; animals)</argsstring>
+        <name>create_with_animals</name>
+        <param>
+          <type>std::vector&lt; <ref refid="classfarm_1_1animal" kindref="compound">animal</ref> *&gt;</type>
+          <declname>animals</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="barn.h" line="15" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="barn.h" line="9" column="1" bodyfile="barn.h" bodystart="8" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classfarm_1_1barn_1af18f8535412e8feb7fe74c404d0bbbec" prot="private" virt="non-virtual"><scope>farm::barn</scope><name>_animals</name></member>
+      <member refid="classfarm_1_1barn_1a72bce45fbad21fdf089c0663dd668225" prot="private" virt="non-virtual"><scope>farm::barn</scope><name>_name</name></member>
+      <member refid="classfarm_1_1barn_1a867d5d647dfed9a0ce51f0374d0b9f1f" prot="private" virt="non-virtual"><scope>farm::barn</scope><name>_state</name></member>
+      <member refid="classfarm_1_1barn_1a4d4c1c03228e98296786e0d18da6ff76" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>add_animal</name></member>
+      <member refid="classfarm_1_1barn_1a7efecb317f2d04c3bfd9f3141e96ee43" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>barn</name></member>
+      <member refid="classfarm_1_1barn_1addbfb7c31836f57ebb8af9d9281660ed" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>barn</name></member>
+      <member refid="classfarm_1_1barn_1a579b61b466ffb4b78bcab7c901723526" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>barn</name></member>
+      <member refid="classfarm_1_1barn_1aa9b69c84c995b0a654d61dd94b9ae7a1" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>create_with_animals</name></member>
+      <member refid="classfarm_1_1barn_1a89beec6d641c7719f6aa523cf25f7877" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>get_animals</name></member>
+      <member refid="classfarm_1_1barn_1acb65d249d948a2bdb055a4f4206b6867" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>get_name</name></member>
+      <member refid="classfarm_1_1barn_1a78ee3671a9b6669ac1aa20194fc82dad" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>get_name_16</name></member>
+      <member refid="classfarm_1_1barn_1a659b1be163b425b5205bedebd8148cf9" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>get_name_32</name></member>
+      <member refid="classfarm_1_1barn_1a5a4ddaa1a7edabc304d43cc12a02657b" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>get_state</name></member>
+      <member refid="classfarm_1_1barn_1ab419f6f0494e4e09ff9090dec24db855" prot="public" virt="non-virtual"><scope>farm::barn</scope><name>set_state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

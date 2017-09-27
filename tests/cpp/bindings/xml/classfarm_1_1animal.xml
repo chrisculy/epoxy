@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="classfarm_1_1animal" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>farm::animal</compoundname>
+    <derivedcompoundref refid="classfarm_1_1cat" prot="public" virt="non-virtual">farm::cat</derivedcompoundref>
+    <derivedcompoundref refid="classfarm_1_1cow" prot="public" virt="non-virtual">farm::cow</derivedcompoundref>
+    <derivedcompoundref refid="classfarm_1_1dog" prot="public" virt="non-virtual">farm::dog</derivedcompoundref>
+    <derivedcompoundref refid="classfarm_1_1horse" prot="public" virt="non-virtual">farm::horse</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfarm_1_1animal_1aa63c8595e6e9512ea9d12b57be4ebbd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::animal::animal</definition>
+        <argsstring>()=default</argsstring>
+        <name>animal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="animal.h" line="6" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1animal_1a72319a39f24b2e08ca726aa04e10cda3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual farm::animal::~animal</definition>
+        <argsstring>()=default</argsstring>
+        <name>~animal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="animal.h" line="7" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1animal_1a2ed78e93437f320bb55959d3e276af89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void farm::animal::speak</definition>
+        <argsstring>() const =0</argsstring>
+        <name>speak</name>
+        <reimplementedby refid="classfarm_1_1horse_1a3ed9ab83000131ded3e343b9f32886bf">speak</reimplementedby>
+        <reimplementedby refid="classfarm_1_1dog_1a8af68c39f6fb314449a1e51197ba7702">speak</reimplementedby>
+        <reimplementedby refid="classfarm_1_1cow_1a631107b53c0a50d0ed61a46542d0e696">speak</reimplementedby>
+        <reimplementedby refid="classfarm_1_1cat_1ae1de7cf97ae0b9251d7f980e372d4dfd">speak</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="animal.h" line="9" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>farm::cat</label>
+        <link refid="classfarm_1_1cat"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>farm::horse</label>
+        <link refid="classfarm_1_1horse"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>farm::cow</label>
+        <link refid="classfarm_1_1cow"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>farm::dog</label>
+        <link refid="classfarm_1_1dog"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>farm::animal</label>
+        <link refid="classfarm_1_1animal"/>
+      </node>
+    </inheritancegraph>
+    <location file="animal.h" line="4" column="1" bodyfile="animal.h" bodystart="3" bodyend="10"/>
+    <listofallmembers>
+      <member refid="classfarm_1_1animal_1aa63c8595e6e9512ea9d12b57be4ebbd4" prot="public" virt="non-virtual"><scope>farm::animal</scope><name>animal</name></member>
+      <member refid="classfarm_1_1animal_1a2ed78e93437f320bb55959d3e276af89" prot="public" virt="pure-virtual"><scope>farm::animal</scope><name>speak</name></member>
+      <member refid="classfarm_1_1animal_1a72319a39f24b2e08ca726aa04e10cda3" prot="public" virt="virtual"><scope>farm::animal</scope><name>~animal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

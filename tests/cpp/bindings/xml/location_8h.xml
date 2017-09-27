@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
-  <compounddef id="namespacetest" kind="namespace" language="C++">
-    <compoundname>test</compoundname>
-    <innernamespace refid="namespacetest_1_1api">test::api</innernamespace>
+  <compounddef id="location_8h" kind="file" language="C++">
+    <compoundname>location.h</compoundname>
+    <innerclass refid="structfarm_1_1location" prot="public">farm::location</innerclass>
+    <innernamespace refid="namespacefarm">farm</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="test_api.h" line="6" column="1"/>
+    <location file="location.h"/>
   </compounddef>
 </doxygen>

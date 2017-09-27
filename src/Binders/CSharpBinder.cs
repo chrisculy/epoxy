@@ -31,7 +31,7 @@ namespace Epoxy.Binders
             {
                 WriteFileHeader(writer);
 
-                writer.WriteLine($"namespace TestApiNamespace");
+                writer.WriteLine($"namespace {Configuration.GlobalsNamespace}");
                 using (Scope namespaceScope = writer.IndentBlock())
                 {
                     writer.WriteLine($"public static class {Configuration.GlobalsClassName}");
@@ -169,7 +169,7 @@ namespace Epoxy.Binders
         private static string ToCsReturnType(Element nativeType)
         {
             // TODO
-            return nativeType.Type.ToString();
+            return nativeType.Type.ToString().ToLower();
         }
 
         private static string ToCsParameter(NamedElement nativeParameter)
@@ -225,6 +225,10 @@ namespace Epoxy.Binders
                         characters.Add(name[index]);
                     }
                 }
+            }
+            else
+            {
+                characters.AddRange(name.Substring(1).ToArray());
             }
 
             return new string(characters.ToArray());

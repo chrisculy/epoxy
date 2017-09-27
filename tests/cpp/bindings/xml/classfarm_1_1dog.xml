@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="classfarm_1_1dog" kind="class" language="C++" prot="public">
+    <compoundname>farm::dog</compoundname>
+    <basecompoundref refid="classfarm_1_1animal" prot="public" virt="non-virtual">farm::animal</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfarm_1_1dog_1a8af68c39f6fb314449a1e51197ba7702" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void farm::dog::speak</definition>
+        <argsstring>() const override</argsstring>
+        <name>speak</name>
+        <reimplements refid="classfarm_1_1animal_1a2ed78e93437f320bb55959d3e276af89">speak</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="dog.h" line="10" column="1" bodyfile="dog.h" bodystart="10" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>farm::dog</label>
+        <link refid="classfarm_1_1dog"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>farm::animal</label>
+        <link refid="classfarm_1_1animal"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>farm::dog</label>
+        <link refid="classfarm_1_1dog"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>farm::animal</label>
+        <link refid="classfarm_1_1animal"/>
+      </node>
+    </collaborationgraph>
+    <location file="dog.h" line="8" column="1" bodyfile="dog.h" bodystart="7" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classfarm_1_1animal_1aa63c8595e6e9512ea9d12b57be4ebbd4" prot="public" virt="non-virtual"><scope>farm::dog</scope><name>animal</name></member>
+      <member refid="classfarm_1_1dog_1a8af68c39f6fb314449a1e51197ba7702" prot="public" virt="virtual"><scope>farm::dog</scope><name>speak</name></member>
+      <member refid="classfarm_1_1animal_1a72319a39f24b2e08ca726aa04e10cda3" prot="public" virt="virtual"><scope>farm::dog</scope><name>~animal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

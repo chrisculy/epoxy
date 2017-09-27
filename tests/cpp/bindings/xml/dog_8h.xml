@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dog_8h" kind="file" language="C++">
+    <compoundname>dog.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="animal_8h" local="yes">animal.h</includes>
+    <incdepgraph>
+      <node id="31">
+        <label>animal.h</label>
+        <link refid="animal_8h_source"/>
+      </node>
+      <node id="30">
+        <label>iostream</label>
+      </node>
+      <node id="29">
+        <label>dog.h</label>
+        <link refid="dog_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classfarm_1_1dog" prot="public">farm::dog</innerclass>
+    <innernamespace refid="namespacefarm">farm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="dog.h"/>
+  </compounddef>
+</doxygen>

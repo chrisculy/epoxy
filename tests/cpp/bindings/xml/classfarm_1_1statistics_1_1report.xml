@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="classfarm_1_1statistics_1_1report" kind="class" language="C++" prot="public">
+    <compoundname>farm::statistics::report</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfarm_1_1statistics_1_1report_1abdb26d135b63c0f480cfb243287f3b05" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string farm::statistics::report::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="43" column="1" bodyfile="report.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1afe280f9c9cc67a2967ae8f008275733d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::statistics::report::report</definition>
+        <argsstring>(std::string name, farm &amp;farm)</argsstring>
+        <name>report</name>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classfarm_1_1farm" kindref="compound">farm</ref> &amp;</type>
+          <declname>farm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="10" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a7627755bac992018a4657964e2621e7e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void farm::statistics::report::run_report</definition>
+        <argsstring>() const</argsstring>
+        <name>run_report</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a5fceec5568a10971a075c01b9eeb0fcb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool farm::statistics::report::get_is_planting</definition>
+        <argsstring>() const</argsstring>
+        <name>get_is_planting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1ab8b9bf4de8f43a5b8a8fde99cce74c93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char farm::statistics::report::get_farm_initial</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_initial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a77e0d9f0fca6d57c0dfc5cc2b2c2fb77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char16_t</type>
+        <definition>char16_t farm::statistics::report::get_farm_initial_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_initial_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="17" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a0bb8b04be0405abbfdeeeff96e1f0931" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char32_t</type>
+        <definition>char32_t farm::statistics::report::get_farm_initial_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_initial_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1adda167799ebf7782579a784860493a09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* farm::statistics::report::get_farm_name_array</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a94f35fee3869c772ad0f21aab98273af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char16_t *</type>
+        <definition>char16_t* farm::statistics::report::get_farm_name_array_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_array_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a7eb71f625ef9a41c95b9072f8cb6d17f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char32_t *</type>
+        <definition>char32_t* farm::statistics::report::get_farm_name_array_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_array_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1abca39b8e6b3867f57527cc204fe7b685" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* farm::statistics::report::get_farm_name_cstring</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_cstring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a8ccdc6a207d19899dc02af5f651e898d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char16_t *</type>
+        <definition>const char16_t* farm::statistics::report::get_farm_name_cstring_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_cstring_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a7d364c010a6d0fafb306b587e29bc605" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char32_t *</type>
+        <definition>const char32_t* farm::statistics::report::get_farm_name_cstring_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_cstring_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a3bfca9c7b841e5c4b281b8038256aee9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string farm::statistics::report::get_farm_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1abe182aecbc07b4efa1a234cdf0a3d1a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::u16string</type>
+        <definition>std::u16string farm::statistics::report::get_farm_name_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1ac33b1c5e6fa78416ffcf6966c3486c3d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::u32string</type>
+        <definition>std::u32string farm::statistics::report::get_farm_name_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_farm_name_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1aeb9b3a0ceab3474a8764e093e92148fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; farm::statistics::report::get_name</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a22be864b6ee5959bf9f69dd25b2a2080" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string&amp; farm::statistics::report::get_name_reference</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name_reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a72ca70d05995a3e057b40d770e06f513" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string *</type>
+        <definition>std::string* farm::statistics::report::get_name_pointer</definition>
+        <argsstring>() const</argsstring>
+        <name>get_name_pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1ac659c51145787e6f8d31ab762fe0c327" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t farm::statistics::report::get_barn_count_8</definition>
+        <argsstring>() const</argsstring>
+        <name>get_barn_count_8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a94bcfe3149ad6f9d6bca8a0ffd471b2a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int16_t</type>
+        <definition>int16_t farm::statistics::report::get_barn_count_16</definition>
+        <argsstring>() const</argsstring>
+        <name>get_barn_count_16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1ae541985a7e75785717904e2236d9253c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t farm::statistics::report::get_barn_count_32</definition>
+        <argsstring>() const</argsstring>
+        <name>get_barn_count_32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a8637dcc2338863533042cfaf3e5cf81f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int64_t</type>
+        <definition>int64_t farm::statistics::report::get_barn_count_64</definition>
+        <argsstring>() const</argsstring>
+        <name>get_barn_count_64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classfarm_1_1statistics_1_1report_1a1f8aeb65845f304a5701793123a8247d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int farm::statistics::report::get_barn_count</definition>
+        <argsstring>() const</argsstring>
+        <name>get_barn_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="report.h" line="40" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="report.h" line="8" column="1" bodyfile="report.h" bodystart="7" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classfarm_1_1statistics_1_1report_1abdb26d135b63c0f480cfb243287f3b05" prot="private" virt="non-virtual"><scope>farm::statistics::report</scope><name>_name</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a1f8aeb65845f304a5701793123a8247d" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_barn_count</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a94bcfe3149ad6f9d6bca8a0ffd471b2a" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_barn_count_16</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1ae541985a7e75785717904e2236d9253c" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_barn_count_32</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a8637dcc2338863533042cfaf3e5cf81f" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_barn_count_64</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1ac659c51145787e6f8d31ab762fe0c327" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_barn_count_8</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1ab8b9bf4de8f43a5b8a8fde99cce74c93" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_initial</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a77e0d9f0fca6d57c0dfc5cc2b2c2fb77" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_initial_16</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a0bb8b04be0405abbfdeeeff96e1f0931" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_initial_32</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a3bfca9c7b841e5c4b281b8038256aee9" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1abe182aecbc07b4efa1a234cdf0a3d1a5" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_16</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1ac33b1c5e6fa78416ffcf6966c3486c3d" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_32</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1adda167799ebf7782579a784860493a09" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_array</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a94f35fee3869c772ad0f21aab98273af" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_array_16</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a7eb71f625ef9a41c95b9072f8cb6d17f" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_array_32</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1abca39b8e6b3867f57527cc204fe7b685" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_cstring</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a8ccdc6a207d19899dc02af5f651e898d" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_cstring_16</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a7d364c010a6d0fafb306b587e29bc605" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_farm_name_cstring_32</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a5fceec5568a10971a075c01b9eeb0fcb" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_is_planting</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1aeb9b3a0ceab3474a8764e093e92148fe" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_name</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a72ca70d05995a3e057b40d770e06f513" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_name_pointer</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a22be864b6ee5959bf9f69dd25b2a2080" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>get_name_reference</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1afe280f9c9cc67a2967ae8f008275733d" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>report</name></member>
+      <member refid="classfarm_1_1statistics_1_1report_1a7627755bac992018a4657964e2621e7e" prot="public" virt="non-virtual"><scope>farm::statistics::report</scope><name>run_report</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

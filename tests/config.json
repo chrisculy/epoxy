@@ -4,8 +4,9 @@
             "language" : "c#",
             "nativeBindingsDirectory" : "tests/cs/native",
             "languageBindingsDirectory" : "tests/cs/managed",
-            "globalsClassName" : "TestApi",
-            "dllFileName" : "test_api.dll"
+            "globalsClassName" : "Farm",
+            "globalsNamespace" : "Farm",
+            "dllFileName" : "farm.dll"
         }
     ],
     "explicit" : true,

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structfarm_1_1location" kind="struct" language="C++" prot="public">
+    <compoundname>farm::location</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfarm_1_1location_1aaa52b345d138df40ce80db792347b903" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float farm::location::latitude</definition>
+        <argsstring></argsstring>
+        <name>latitude</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="location.h" line="13" column="1" bodyfile="location.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfarm_1_1location_1a32da7b07a5740ae21af237a08da54772" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float farm::location::longitude</definition>
+        <argsstring></argsstring>
+        <name>longitude</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="location.h" line="14" column="1" bodyfile="location.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfarm_1_1location_1a605b07b83298ea60c3ea5b34240d6093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>farm::location::location</definition>
+        <argsstring>()=default</argsstring>
+        <name>location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="location.h" line="5" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structfarm_1_1location_1abf21813beb2c3dd6f37170a6035fa592" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>farm::location::location</definition>
+        <argsstring>(float latitude, float longitude)</argsstring>
+        <name>location</name>
+        <param>
+          <type>float</type>
+          <declname>latitude</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>longitude</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="location.h" line="7" column="1" bodyfile="location.h" bodystart="7" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="location.h" line="4" column="1" bodyfile="location.h" bodystart="3" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structfarm_1_1location_1aaa52b345d138df40ce80db792347b903" prot="public" virt="non-virtual"><scope>farm::location</scope><name>latitude</name></member>
+      <member refid="structfarm_1_1location_1a605b07b83298ea60c3ea5b34240d6093" prot="public" virt="non-virtual"><scope>farm::location</scope><name>location</name></member>
+      <member refid="structfarm_1_1location_1abf21813beb2c3dd6f37170a6035fa592" prot="public" virt="non-virtual"><scope>farm::location</scope><name>location</name></member>
+      <member refid="structfarm_1_1location_1a32da7b07a5740ae21af237a08da54772" prot="public" virt="non-virtual"><scope>farm::location</scope><name>longitude</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
