@@ -61,7 +61,7 @@
     <member refid="classfarm_1_1dog_1a8af68c39f6fb314449a1e51197ba7702" kind="function"><name>speak</name></member>
   </compound>
   <compound refid="classfarm_1_1farm" kind="class"><name>farm::farm</name>
-    <member refid="classfarm_1_1farm_1a3a1b70a12625804fc7023bc06d1455c4" kind="variable"><name>_name</name></member>
+    <member refid="classfarm_1_1farm_1a848b5074d61b5c1087d7453b9612ad8c" kind="variable"><name>optimal_acre_count</name></member>
     <member refid="classfarm_1_1farm_1aeb8b57f180545e499d4e7cc761317e0f" kind="variable"><name>_farmer</name></member>
     <member refid="classfarm_1_1farm_1af9ab3332846260b6ebbd17009f510ef3" kind="variable"><name>_barns</name></member>
     <member refid="classfarm_1_1farm_1ad850fdd437f800224564c92912bf2592" kind="variable"><name>_state</name></member>

@@ -28,6 +28,8 @@ namespace farm
         location get_location() const;
         const std::vector<std::unique_ptr<barn>>& get_barns() const;
 
+        static int optimal_acre_count = 200
+
     private:
         // stored as UTF-8
         std::string _name;

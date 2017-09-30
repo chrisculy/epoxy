@@ -2,21 +2,28 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="classfarm_1_1farm" kind="class" language="C++" prot="public">
     <compoundname>farm::farm</compoundname>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classfarm_1_1farm_1a3a1b70a12625804fc7023bc06d1455c4" prot="private" static="no" mutable="no">
-        <type>std::string</type>
-        <definition>std::string farm::farm::_name</definition>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classfarm_1_1farm_1a848b5074d61b5c1087d7453b9612ad8c" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int farm::farm::optimal_acre_count</definition>
         <argsstring></argsstring>
-        <name>_name</name>
+        <name>optimal_acre_count</name>
+        <initializer>= 200
+
+    private:
+        
+        std::string _name</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="33" column="1" bodyfile="farm.h" bodystart="33" bodyend="-1"/>
+        <location file="farm.h" line="31" column="1" bodyfile="farm.h" bodystart="31" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfarm_1_1farm_1aeb8b57f180545e499d4e7cc761317e0f" prot="private" static="no" mutable="no">
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfarm_1_1farm_1aeb8b57f180545e499d4e7cc761317e0f" prot="public" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="classfarm_1_1farmer" kindref="compound">farmer</ref> &gt;</type>
         <definition>std::unique_ptr&lt;farmer&gt; farm::farm::_farmer</definition>
         <argsstring></argsstring>
@@ -27,9 +34,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="34" column="1" bodyfile="farm.h" bodystart="34" bodyend="-1"/>
+        <location file="farm.h" line="36" column="1" bodyfile="farm.h" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfarm_1_1farm_1af9ab3332846260b6ebbd17009f510ef3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classfarm_1_1farm_1af9ab3332846260b6ebbd17009f510ef3" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::unique_ptr&lt; <ref refid="classfarm_1_1barn" kindref="compound">barn</ref> &gt; &gt;</type>
         <definition>std::vector&lt;std::unique_ptr&lt;barn&gt; &gt; farm::farm::_barns</definition>
         <argsstring></argsstring>
@@ -40,9 +47,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="35" column="1" bodyfile="farm.h" bodystart="35" bodyend="-1"/>
+        <location file="farm.h" line="37" column="1" bodyfile="farm.h" bodystart="37" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classfarm_1_1farm_1ad850fdd437f800224564c92912bf2592" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classfarm_1_1farm_1ad850fdd437f800224564c92912bf2592" prot="public" static="no" mutable="no">
         <type>farm_state</type>
         <definition>farm_state farm::farm::_state</definition>
         <argsstring></argsstring>
@@ -53,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="36" column="1" bodyfile="farm.h" bodystart="36" bodyend="-1"/>
+        <location file="farm.h" line="38" column="1" bodyfile="farm.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -267,12 +274,11 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="farm.h" line="13" column="1" bodyfile="farm.h" bodystart="12" bodyend="37"/>
+    <location file="farm.h" line="13" column="1" bodyfile="farm.h" bodystart="12" bodyend="39"/>
     <listofallmembers>
-      <member refid="classfarm_1_1farm_1af9ab3332846260b6ebbd17009f510ef3" prot="private" virt="non-virtual"><scope>farm::farm</scope><name>_barns</name></member>
-      <member refid="classfarm_1_1farm_1aeb8b57f180545e499d4e7cc761317e0f" prot="private" virt="non-virtual"><scope>farm::farm</scope><name>_farmer</name></member>
-      <member refid="classfarm_1_1farm_1a3a1b70a12625804fc7023bc06d1455c4" prot="private" virt="non-virtual"><scope>farm::farm</scope><name>_name</name></member>
-      <member refid="classfarm_1_1farm_1ad850fdd437f800224564c92912bf2592" prot="private" virt="non-virtual"><scope>farm::farm</scope><name>_state</name></member>
+      <member refid="classfarm_1_1farm_1af9ab3332846260b6ebbd17009f510ef3" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>_barns</name></member>
+      <member refid="classfarm_1_1farm_1aeb8b57f180545e499d4e7cc761317e0f" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>_farmer</name></member>
+      <member refid="classfarm_1_1farm_1ad850fdd437f800224564c92912bf2592" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>_state</name></member>
       <member refid="classfarm_1_1farm_1a4b46f5abe80ba8ea215f0f253fc501ad" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>add_barn</name></member>
       <member refid="classfarm_1_1farm_1af5ba65717d89c3f5792873e386a99fa9" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>farm</name></member>
       <member refid="classfarm_1_1farm_1aca945ce41bf164cbb15596648b69bd42" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>farm</name></member>
@@ -283,6 +289,7 @@
       <member refid="classfarm_1_1farm_1ab5196d82bfede7cbeface4b380175952" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>get_location</name></member>
       <member refid="classfarm_1_1farm_1a82cf68035da0a517de48048f66803401" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>get_name</name></member>
       <member refid="classfarm_1_1farm_1a97a0a9428db9978d74fa69a8076b2e56" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>get_state</name></member>
+      <member refid="classfarm_1_1farm_1a848b5074d61b5c1087d7453b9612ad8c" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>optimal_acre_count</name></member>
       <member refid="classfarm_1_1farm_1a3ff3389ca200bd7ccb3b8ff487a9c0dd" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>set_farmer</name></member>
       <member refid="classfarm_1_1farm_1a52ca5000dcd56cba160f0800999093c6" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>set_location</name></member>
       <member refid="classfarm_1_1farm_1af6d124aae98ac2a5089e45fc06e7bfd6" prot="public" virt="non-virtual"><scope>farm::farm</scope><name>set_state</name></member>

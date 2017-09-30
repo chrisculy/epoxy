@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="46" column="1" bodyfile="farm.h" bodystart="46" bodyend="-1"/>
+        <location file="farm.h" line="48" column="1" bodyfile="farm.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="farm.h" line="39" column="1" bodyfile="farm.h" bodystart="39" bodyend="44"/>
+        <location file="farm.h" line="41" column="1" bodyfile="farm.h" bodystart="41" bodyend="46"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
