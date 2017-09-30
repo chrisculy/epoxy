@@ -17,6 +17,7 @@ namespace Epoxy.Utility
         public const string Param = "param";
         public const string Protection = "prot";
         public const string Public = "public";
+        public const string Static = "static";
         public const string Type = "type";
         public const string Variable = "variable";
         public const string XmlOnlySelector = ".//xmlonly";
@@ -29,6 +30,11 @@ namespace Epoxy.Utility
         public static bool GetIsConstant(XmlNode node)
         {
             return node.Attributes[Xml.Const].Value == Yes;
+        }
+
+        public static bool GetIsStatic(XmlNode node)
+        {
+            return node.Attributes[Xml.Static].Value == Yes;
         }
 
         public static string GetKind(XmlNode node)

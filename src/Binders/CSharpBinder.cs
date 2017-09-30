@@ -115,8 +115,9 @@ namespace Epoxy.Binders
         private void WriteCsFunction(Function function, IndentedWriter writer)
         {
             string returnType = ToCsReturnType(function.Return);
+            string qualifiers = function.IsStatic ? "static " : "";
 
-            writer.WriteLine($"public {returnType} {ToPascalCase(function.Name)}{ToCsParameterString(function.Parameters)}");
+            writer.WriteLine($"public {qualifiers}{returnType} {ToPascalCase(function.Name)}{ToCsParameterString(function.Parameters)}");
             using (Scope functionScope = writer.IndentBlock())
             {
                 writer.WriteLine($@"{(returnType == "void" ? "" : "return ")}{ToNativeFunction(function)}({(string.Join(", ", function.Parameters.Select(parameter => parameter.Name)))});");

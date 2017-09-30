@@ -4,7 +4,7 @@ namespace Epoxy.Api
 {
     public class Function
     {
-        public Function(string id, string namespaceName, string name, Element returnType, bool isConstant, bool isConstructor, ReadOnlyCollection<NamedElement> parameters)
+        public Function(string id, string namespaceName, string name, Element returnType, bool isConstant, bool isConstructor, bool isStatic, ReadOnlyCollection<NamedElement> parameters)
         {
             Id = id;
             Namespace = namespaceName;
@@ -12,6 +12,7 @@ namespace Epoxy.Api
             Return = returnType;
             IsConstant = isConstant;
             IsConstructor = isConstructor;
+            IsStatic = isStatic;
             Parameters = parameters;
         }
 
@@ -21,6 +22,7 @@ namespace Epoxy.Api
         public Element Return { get; private set; }
         public bool IsConstant { get; private set; }
         public bool IsConstructor { get; private set; }
+        public bool IsStatic { get; private set; }
         public ReadOnlyCollection<NamedElement> Parameters { get; private set; }
     }
 }
