@@ -95,7 +95,7 @@ namespace Epoxy.Utility
             if (namedElement != null)
             {
                 apiContainer.Variables.Add(new Variable(namespaceName, namedElement.Name, namedElement.Type,
-                    namedElement.UnresolvedTypeInfo, namedElement.IsConstant, namedElement.IsReference,
+                    namedElement.UnresolvedTypeInfo, Xml.GetIsStatic(memberNode), namedElement.IsConstant, namedElement.IsReference,
                     namedElement.IsRawPointer, namedElement.IsSharedPointer, namedElement.IsUniquePointer));
             }
         }

@@ -10,13 +10,13 @@ namespace Epoxy.Api
             Name = name;
             Namespace = namespaceName;
             Functions = new List<Function>();
-            Variables = new List<NamedElement>();
+            Variables = new List<Variable>();
         }
 
         public string Id { get; }
         public string Name { get; }
         public string Namespace { get; private set; }
         public List<Function> Functions { get; private set; }
-        public List<NamedElement> Variables { get; private set; }
+        public List<Variable> Variables { get; private set; }
     }
 }

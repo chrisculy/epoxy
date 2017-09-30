@@ -8,11 +8,11 @@ namespace Epoxy.Api
         {
             Classes = new List<Class>();
             Functions = new List<Function>();
-            Variables = new List<NamedElement>();            
+            Variables = new List<Variable>();            
         }
 
         public List<Class> Classes { get; }
         public List<Function> Functions { get; }
-        public List<NamedElement> Variables { get; }
+        public List<Variable> Variables { get; }
     }
 }

@@ -44,7 +44,7 @@ namespace Epoxy.Binders
                         }
 
                         // write out the variables
-                        foreach (NamedElement variable in graph.Variables)
+                        foreach (Variable variable in graph.Variables)
                         {
                             WriteCsVariable(variable, writer);
                         }
@@ -56,7 +56,7 @@ namespace Epoxy.Binders
                         }
 
                         // write out the native bindings for the variables
-                        foreach (NamedElement variable in graph.Variables)
+                        foreach (Variable variable in graph.Variables)
                         {
                             WriteVariableNativeBindings(variable, writer);
                         }
@@ -91,7 +91,7 @@ namespace Epoxy.Binders
                         }
 
                         // write out the member variables
-                        foreach (NamedElement variable in classDefinition.Variables)
+                        foreach (Variable variable in classDefinition.Variables)
                         {
                             WriteCsVariable(variable, writer);
                         }
@@ -103,7 +103,7 @@ namespace Epoxy.Binders
                         }
 
                         // write out the native bindings for the variables
-                        foreach (NamedElement variable in classDefinition.Variables)
+                        foreach (Variable variable in classDefinition.Variables)
                         {
                             WriteVariableNativeBindings(variable, writer);
                         }
@@ -132,10 +132,11 @@ namespace Epoxy.Binders
             writer.WriteLine();
         }
         
-        private void WriteCsVariable(NamedElement variable, IndentedWriter writer)
+        private void WriteCsVariable(Variable variable, IndentedWriter writer)
         {
             // TODO: is return type the right marshalling strategy here?
-            writer.WriteLine($"public {ToCsReturnType(variable)} {ToPascalCase(variable.Name)}");
+            string qualifiers = variable.IsStatic ? "static " : "";
+            writer.WriteLine($"public {qualifiers}{ToCsReturnType(variable)} {ToPascalCase(variable.Name)}");
             using (Scope propertyScope = writer.IndentBlock())
             {
                 writer.WriteLine($"get {{ return {ToNativeVariableGet(variable)}(); }}");
@@ -144,7 +145,7 @@ namespace Epoxy.Binders
             writer.WriteLine();
         }
 
-        private void WriteVariableNativeBindings(NamedElement variable, IndentedWriter writer)
+        private void WriteVariableNativeBindings(Variable variable, IndentedWriter writer)
         {
             writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
             writer.WriteLine($"private static extern {ToCsReturnType(variable)} {ToNativeVariableGet(variable)}();");
@@ -189,12 +190,12 @@ namespace Epoxy.Binders
             return $"{ToPascalCase(function.Name)}_Native";
         }
 
-        private static string ToNativeVariableGet(NamedElement variable)
+        private static string ToNativeVariableGet(Variable variable)
         {
             return $"Get{variable.Name}_Native";
         }
 
-        private static string ToNativeVariableSet(NamedElement variable)
+        private static string ToNativeVariableSet(Variable variable)
         {
             return $"Set{variable.Name}_Native";
         }
