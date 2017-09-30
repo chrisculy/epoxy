@@ -24,7 +24,7 @@ namespace Epoxy.Binders
 
             foreach (Class classDefinition in graph.Classes)
             {
-                WriteCsClass(classDefinition, Path.Combine(Configuration.LanguageBindingsDirectory, $"{classDefinition.Name}.cs"));
+                WriteCsClass(classDefinition, Path.Combine(Configuration.LanguageBindingsDirectory, $"{ToPascalCase(classDefinition.Name)}.cs"));
             }
 
             using (IndentedWriter writer = new IndentedWriter($"{Path.Combine(Configuration.LanguageBindingsDirectory, Configuration.GlobalsClassName)}.cs"))
@@ -192,12 +192,12 @@ namespace Epoxy.Binders
 
         private static string ToNativeVariableGet(Variable variable)
         {
-            return $"Get{variable.Name}_Native";
+            return $"Get{ToPascalCase(variable.Name)}_Native";
         }
 
         private static string ToNativeVariableSet(Variable variable)
         {
-            return $"Set{variable.Name}_Native";
+            return $"Set{ToPascalCase(variable.Name)}_Native";
         }
 
         private static string ToPascalCase(string name)
