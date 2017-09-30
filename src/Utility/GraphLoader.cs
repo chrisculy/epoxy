@@ -58,15 +58,16 @@ namespace Epoxy.Utility
 
         private static void ProcessMembers(ApiContainer apiContainer, XmlNode node, string namespaceName)
         {
+            bool isClassMember = apiContainer is Class;
             foreach (XmlNode memberNode in GetMemberNodes(node))
             {
                 switch (Xml.GetKind(memberNode))
                 {
                     case Xml.Function:
-                        ProcessFunction(apiContainer, memberNode, namespaceName);
+                        ProcessFunction(apiContainer, memberNode, namespaceName, isClassMember);
                         break;
                     case Xml.Variable:
-                        ProcessVariable(apiContainer, memberNode, namespaceName);
+                        ProcessVariable(apiContainer, memberNode, namespaceName, isClassMember);
                         break;
                     default:
                         // This can only happen if GetMemberNodes is broken.
@@ -75,7 +76,7 @@ namespace Epoxy.Utility
             }
         }
 
-        private static void ProcessFunction(ApiContainer apiContainer, XmlNode memberNode, string namespaceName)
+        private static void ProcessFunction(ApiContainer apiContainer, XmlNode memberNode, string namespaceName, bool isClassMember)
         {
             List<NamedElement> parameters = new List<NamedElement>();
             foreach (XmlNode parameterNode in memberNode.SelectNodes(Xml.Param))
@@ -86,16 +87,16 @@ namespace Epoxy.Utility
             Element returnType = GetElement(memberNode);
             string name = Xml.GetName(memberNode);
             bool isConstructor = apiContainer is Class classDefinition && classDefinition.Name == name;
-            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, name, returnType, Xml.GetIsConstant(memberNode), isConstructor, Xml.GetIsStatic(memberNode), parameters.AsReadOnly()));
+            apiContainer.Functions.Add(new Function(Xml.GetId(memberNode), namespaceName, name, returnType, Xml.GetIsConstant(memberNode), isConstructor, Xml.GetIsStatic(memberNode), isClassMember, parameters.AsReadOnly()));
         }
 
-        private static void ProcessVariable(ApiContainer apiContainer, XmlNode memberNode, string namespaceName)
+        private static void ProcessVariable(ApiContainer apiContainer, XmlNode memberNode, string namespaceName, bool isClassMember)
         {
             NamedElement namedElement = GetNamedElement(memberNode);
             if (namedElement != null)
             {
                 apiContainer.Variables.Add(new Variable(namespaceName, namedElement.Name, namedElement.Type,
-                    namedElement.UnresolvedTypeInfo, Xml.GetIsStatic(memberNode), namedElement.IsConstant, namedElement.IsReference,
+                    namedElement.UnresolvedTypeInfo, Xml.GetIsStatic(memberNode), isClassMember, namedElement.IsConstant, namedElement.IsReference,
                     namedElement.IsRawPointer, namedElement.IsSharedPointer, namedElement.IsUniquePointer));
             }
         }

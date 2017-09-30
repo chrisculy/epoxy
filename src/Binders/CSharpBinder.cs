@@ -115,7 +115,7 @@ namespace Epoxy.Binders
         private void WriteCsFunction(Function function, IndentedWriter writer)
         {
             string returnType = ToCsReturnType(function.Return);
-            string qualifiers = function.IsStatic ? "static " : "";
+            string qualifiers = function.IsStatic || !function.IsClassMember ? "static " : "";
 
             writer.WriteLine($"public {qualifiers}{returnType} {ToPascalCase(function.Name)}{ToCsParameterString(function.Parameters)}");
             using (Scope functionScope = writer.IndentBlock())
@@ -135,7 +135,7 @@ namespace Epoxy.Binders
         private void WriteCsVariable(Variable variable, IndentedWriter writer)
         {
             // TODO: is return type the right marshalling strategy here?
-            string qualifiers = variable.IsStatic ? "static " : "";
+            string qualifiers = variable.IsStatic || !variable.IsClassMember ? "static " : "";
             writer.WriteLine($"public {qualifiers}{ToCsReturnType(variable)} {ToPascalCase(variable.Name)}");
             using (Scope propertyScope = writer.IndentBlock())
             {
