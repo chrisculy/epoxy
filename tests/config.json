@@ -4,7 +4,7 @@
             "language" : "c#",
             "nativeBindingsDirectory" : "tests/cs/native",
             "languageBindingsDirectory" : "tests/cs/managed",
-            "globalsClassName" : "Farm",
+            "globalsClassName" : "Globals",
             "globalsNamespace" : "Farm",
             "dllFileName" : "farm.dll"
         }
