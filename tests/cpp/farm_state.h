@@ -1,11 +1,11 @@
 namespace farm
 {
-    enum class farm_state
-    {
-        TILLING,
-        PLANTING,
-        GROWING,
-        HARVESTING,
-        RESTING
-    };
+	enum class farm_state
+	{
+		TILLING,
+		PLANTING,
+		GROWING,
+		HARVESTING,
+		RESTING
+	};
 }

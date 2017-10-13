@@ -14,9 +14,9 @@ Epoxy is run using a JSON configuration file like so
 
 The JSON configuration file has the following options:
 
-* `languages` : 
+* `languages` :
   * an array of the languages to generate bindings for; supported values are `c#`, `java`, `javascript`, and `typescript`
-* `explicit` : 
+* `explicit` :
   * when `true`, Epoxy will only generate bindings for symbols that are explicited labeled with `@bind` (and not labeled with `@bind{exclude}`) in their Doxygen documentation
   * when `false`, Epoxy will generate bindings for any symbol that does not contain the `@bind{exclude}` Doxygen tag, even if that symbol is not documented.
 * `doxygenXmlDirectory`

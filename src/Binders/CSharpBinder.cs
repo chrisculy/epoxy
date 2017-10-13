@@ -8,232 +8,232 @@ using Epoxy.Utility;
 
 namespace Epoxy.Binders
 {
-    public class CSharpBinder : IBinder
-    {
-        public CSharpBinder(BinderConfiguration configuration)
-            : base(configuration)
-        {
-        }
+	public class CSharpBinder : IBinder
+	{
+		public CSharpBinder(BinderConfiguration configuration)
+			: base(configuration)
+		{
+		}
 
-        public override void GenerateLanguageBindings(Graph graph)
-        {
-            if (!Directory.Exists(Configuration.LanguageBindingsDirectory))
-            {
-                Directory.CreateDirectory(Configuration.LanguageBindingsDirectory);
-            }
+		public override void GenerateLanguageBindings(Graph graph)
+		{
+			if (!Directory.Exists(Configuration.LanguageBindingsDirectory))
+			{
+				Directory.CreateDirectory(Configuration.LanguageBindingsDirectory);
+			}
 
-            foreach (Class classDefinition in graph.Classes)
-            {
-                WriteCsClass(classDefinition, Path.Combine(Configuration.LanguageBindingsDirectory, $"{ToPascalCase(classDefinition.Name)}.cs"));
-            }
+			foreach (Class classDefinition in graph.Classes)
+			{
+				WriteCsClass(classDefinition, Path.Combine(Configuration.LanguageBindingsDirectory, $"{ToPascalCase(classDefinition.Name)}.cs"));
+			}
 
-            using (IndentedWriter writer = new IndentedWriter($"{Path.Combine(Configuration.LanguageBindingsDirectory, Configuration.GlobalsClassName)}.cs"))
-            {
-                WriteFileHeader(writer);
+			using (IndentedWriter writer = new IndentedWriter($"{Path.Combine(Configuration.LanguageBindingsDirectory, Configuration.GlobalsClassName)}.cs"))
+			{
+				WriteFileHeader(writer);
 
-                writer.WriteLine($"namespace {Configuration.GlobalsNamespace}");
-                using (Scope namespaceScope = writer.IndentBlock())
-                {
-                    writer.WriteLine($"public static class {Configuration.GlobalsClassName}");
-                    using (Scope classScope = writer.IndentBlock())
-                    {
-                        // write out the functions
-                        foreach (Function function in graph.Functions)
-                        {
-                            WriteCsFunction(function, writer);
-                        }
+				writer.WriteLine($"namespace {Configuration.GlobalsNamespace}");
+				using (Scope namespaceScope = writer.IndentBlock())
+				{
+					writer.WriteLine($"public static class {Configuration.GlobalsClassName}");
+					using (Scope classScope = writer.IndentBlock())
+					{
+						// write out the functions
+						foreach (Function function in graph.Functions)
+						{
+							WriteCsFunction(function, writer);
+						}
 
-                        // write out the variables
-                        foreach (Variable variable in graph.Variables)
-                        {
-                            WriteCsVariable(variable, writer);
-                        }
+						// write out the variables
+						foreach (Variable variable in graph.Variables)
+						{
+							WriteCsVariable(variable, writer);
+						}
 
-                        // write out the native bindings for the functions
-                        foreach (Function function in graph.Functions)
-                        {
-                            WriteFunctionNativeBindings(function, writer);
-                        }
+						// write out the native bindings for the functions
+						foreach (Function function in graph.Functions)
+						{
+							WriteFunctionNativeBindings(function, writer);
+						}
 
-                        // write out the native bindings for the variables
-                        foreach (Variable variable in graph.Variables)
-                        {
-                            WriteVariableNativeBindings(variable, writer);
-                        }
-                    }
-                }
-            }
-        }
+						// write out the native bindings for the variables
+						foreach (Variable variable in graph.Variables)
+						{
+							WriteVariableNativeBindings(variable, writer);
+						}
+					}
+				}
+			}
+		}
 
-        public override void GenerateNativeBindings(Graph graph)
-        {
-            // TODO
-        }
+		public override void GenerateNativeBindings(Graph graph)
+		{
+			// TODO
+		}
 
-        private void WriteCsClass(Class classDefinition, string filePath)
-        {
-            using (IndentedWriter writer = new IndentedWriter(filePath))
-            {
-                WriteFileHeader(writer);
+		private void WriteCsClass(Class classDefinition, string filePath)
+		{
+			using (IndentedWriter writer = new IndentedWriter(filePath))
+			{
+				WriteFileHeader(writer);
 
-                writer.WriteLine($"namespace {ToCsNamespace(classDefinition.Namespace)}");
-                using (Scope namespaceScope = writer.IndentBlock())
-                {
-                    string className = ToPascalCase(classDefinition.Name);
-                    writer.WriteLine($"class {className} : SafeEpoxyHandle");
+				writer.WriteLine($"namespace {ToCsNamespace(classDefinition.Namespace)}");
+				using (Scope namespaceScope = writer.IndentBlock())
+				{
+					string className = ToPascalCase(classDefinition.Name);
+					writer.WriteLine($"class {className} : SafeEpoxyHandle");
 
-                    using (Scope classScope = writer.IndentBlock())
-                    {
-                        // write out the constructor, destructor, and the member functions
-                        foreach (Function function in classDefinition.Functions)
-                        {
-                            WriteCsFunction(function, writer);
-                        }
+					using (Scope classScope = writer.IndentBlock())
+					{
+						// write out the constructor, destructor, and the member functions
+						foreach (Function function in classDefinition.Functions)
+						{
+							WriteCsFunction(function, writer);
+						}
 
-                        // write out the member variables
-                        foreach (Variable variable in classDefinition.Variables)
-                        {
-                            WriteCsVariable(variable, writer);
-                        }
+						// write out the member variables
+						foreach (Variable variable in classDefinition.Variables)
+						{
+							WriteCsVariable(variable, writer);
+						}
 
-                        // write out the native bindings for the functions
-                        foreach (Function function in classDefinition.Functions)
-                        {
-                            WriteFunctionNativeBindings(function, writer);
-                        }
+						// write out the native bindings for the functions
+						foreach (Function function in classDefinition.Functions)
+						{
+							WriteFunctionNativeBindings(function, writer);
+						}
 
-                        // write out the native bindings for the variables
-                        foreach (Variable variable in classDefinition.Variables)
-                        {
-                            WriteVariableNativeBindings(variable, writer);
-                        }
-                    }
-                }
-            }
-        }
+						// write out the native bindings for the variables
+						foreach (Variable variable in classDefinition.Variables)
+						{
+							WriteVariableNativeBindings(variable, writer);
+						}
+					}
+				}
+			}
+		}
 
-        private void WriteCsFunction(Function function, IndentedWriter writer)
-        {
-            string returnType = ToCsReturnType(function.Return);
-            string qualifiers = function.IsStatic || !function.IsClassMember ? "static " : "";
+		private void WriteCsFunction(Function function, IndentedWriter writer)
+		{
+			string returnType = ToCsReturnType(function.Return);
+			string qualifiers = function.IsStatic || !function.IsClassMember ? "static " : "";
 
-            writer.WriteLine($"public {qualifiers}{returnType} {ToPascalCase(function.Name)}{ToCsParameterString(function.Parameters)}");
-            using (Scope functionScope = writer.IndentBlock())
-            {
-                writer.WriteLine($@"{(returnType == "void" ? "" : "return ")}{ToNativeFunction(function)}({(string.Join(", ", function.Parameters.Select(parameter => parameter.Name)))});");
-            }
-            writer.WriteLine();
-        }
+			writer.WriteLine($"public {qualifiers}{returnType} {ToPascalCase(function.Name)}{ToCsParameterString(function.Parameters)}");
+			using (Scope functionScope = writer.IndentBlock())
+			{
+				writer.WriteLine($@"{(returnType == "void" ? "" : "return ")}{ToNativeFunction(function)}({(string.Join(", ", function.Parameters.Select(parameter => parameter.Name)))});");
+			}
+			writer.WriteLine();
+		}
 
-        private void WriteFunctionNativeBindings(Function function, IndentedWriter writer)
-        {
-            writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
-            writer.WriteLine($"private static extern {ToCsReturnType(function.Return)} {ToNativeFunction(function)}{ToCsParameterString(function.Parameters)};");
-            writer.WriteLine();
-        }
-        
-        private void WriteCsVariable(Variable variable, IndentedWriter writer)
-        {
-            // TODO: is return type the right marshalling strategy here?
-            string qualifiers = variable.IsStatic || !variable.IsClassMember ? "static " : "";
-            writer.WriteLine($"public {qualifiers}{ToCsReturnType(variable)} {ToPascalCase(variable.Name)}");
-            using (Scope propertyScope = writer.IndentBlock())
-            {
-                writer.WriteLine($"get {{ return {ToNativeVariableGet(variable)}(); }}");
-                writer.WriteLine($"set {{ {ToNativeVariableSet(variable)}(value); }}");
-            }
-            writer.WriteLine();
-        }
+		private void WriteFunctionNativeBindings(Function function, IndentedWriter writer)
+		{
+			writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
+			writer.WriteLine($"private static extern {ToCsReturnType(function.Return)} {ToNativeFunction(function)}{ToCsParameterString(function.Parameters)};");
+			writer.WriteLine();
+		}
 
-        private void WriteVariableNativeBindings(Variable variable, IndentedWriter writer)
-        {
-            writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
-            writer.WriteLine($"private static extern {ToCsReturnType(variable)} {ToNativeVariableGet(variable)}();");
-            writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
-            writer.WriteLine($"private static extern void {ToNativeVariableSet(variable)}({ToCsParameter(variable)});");
-            writer.WriteLine();
-        }
+		private void WriteCsVariable(Variable variable, IndentedWriter writer)
+		{
+			// TODO: is return type the right marshalling strategy here?
+			string qualifiers = variable.IsStatic || !variable.IsClassMember ? "static " : "";
+			writer.WriteLine($"public {qualifiers}{ToCsReturnType(variable)} {ToPascalCase(variable.Name)}");
+			using (Scope propertyScope = writer.IndentBlock())
+			{
+				writer.WriteLine($"get {{ return {ToNativeVariableGet(variable)}(); }}");
+				writer.WriteLine($"set {{ {ToNativeVariableSet(variable)}(value); }}");
+			}
+			writer.WriteLine();
+		}
 
-        private static void WriteFileHeader(IndentedWriter writer)
-        {
-            writer.WriteLine("// WARNING: This file is generated by Epoxy. Do not edit this file manually.");
-            writer.WriteLine("// -------------------------------------------------------------------------");
-            writer.WriteLine();
-            writer.WriteLine("using System.Runtime.InteropServices;");
-            writer.WriteLine();
-        }
+		private void WriteVariableNativeBindings(Variable variable, IndentedWriter writer)
+		{
+			writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
+			writer.WriteLine($"private static extern {ToCsReturnType(variable)} {ToNativeVariableGet(variable)}();");
+			writer.WriteLine($"[DllImport(\"{Configuration.DllFileName}\")]");
+			writer.WriteLine($"private static extern void {ToNativeVariableSet(variable)}({ToCsParameter(variable)});");
+			writer.WriteLine();
+		}
 
-        private static string ToCsNamespace(string nativeNamespace)
-        {
-            return ToPascalCase(nativeNamespace.Replace("::", "_"));
-        }
+		private static void WriteFileHeader(IndentedWriter writer)
+		{
+			writer.WriteLine("// WARNING: This file is generated by Epoxy. Do not edit this file manually.");
+			writer.WriteLine("// -------------------------------------------------------------------------");
+			writer.WriteLine();
+			writer.WriteLine("using System.Runtime.InteropServices;");
+			writer.WriteLine();
+		}
 
-        private static string ToCsReturnType(Element nativeType)
-        {
-            // TODO
-            return nativeType.Type.ToString().ToLower();
-        }
+		private static string ToCsNamespace(string nativeNamespace)
+		{
+			return ToPascalCase(nativeNamespace.Replace("::", "_"));
+		}
 
-        private static string ToCsParameter(NamedElement nativeParameter)
-        {
-            // TODO
-            return $"{nativeParameter.Type.ToString()} {nativeParameter.Name}";
-        }
+		private static string ToCsReturnType(Element nativeType)
+		{
+			// TODO
+			return nativeType.Type.ToString().ToLower();
+		}
 
-        private static string ToCsParameterString(ReadOnlyCollection<NamedElement> parameters)
-        {
-            return $"({string.Join(", ", parameters.Select(parameter => ToCsParameter(parameter)))})";
-        }
+		private static string ToCsParameter(NamedElement nativeParameter)
+		{
+			// TODO
+			return $"{nativeParameter.Type.ToString()} {nativeParameter.Name}";
+		}
 
-        private static string ToNativeFunction(Function function)
-        {
-            return $"{ToPascalCase(function.Name)}_Native";
-        }
+		private static string ToCsParameterString(ReadOnlyCollection<NamedElement> parameters)
+		{
+			return $"({string.Join(", ", parameters.Select(parameter => ToCsParameter(parameter)))})";
+		}
 
-        private static string ToNativeVariableGet(Variable variable)
-        {
-            return $"Get{ToPascalCase(variable.Name)}_Native";
-        }
+		private static string ToNativeFunction(Function function)
+		{
+			return $"{ToPascalCase(function.Name)}_Native";
+		}
 
-        private static string ToNativeVariableSet(Variable variable)
-        {
-            return $"Set{ToPascalCase(variable.Name)}_Native";
-        }
+		private static string ToNativeVariableGet(Variable variable)
+		{
+			return $"Get{ToPascalCase(variable.Name)}_Native";
+		}
 
-        private static string ToPascalCase(string name)
-        {
-            if (name.IsNullOrEmpty())
-                return name;
-            
-            // capitalize first letter
-            List<char> characters = new List<char>();
-            characters.Add(char.ToUpper(name[0]));
+		private static string ToNativeVariableSet(Variable variable)
+		{
+			return $"Set{ToPascalCase(variable.Name)}_Native";
+		}
 
-            // handle snake case
-            if (name.Contains("_"))
-            {
-                for (int index = 1; index < name.Length; index++)
-                {
-                    if (name[index] == '_')
-                    {
-                        if (index + 1 < name.Length)
-                        {
-                            index++;
-                            characters.Add(char.ToUpper(name[index]));
-                        }
-                    }
-                    else
-                    {
-                        characters.Add(name[index]);
-                    }
-                }
-            }
-            else
-            {
-                characters.AddRange(name.Substring(1).ToArray());
-            }
+		private static string ToPascalCase(string name)
+		{
+			if (name.IsNullOrEmpty())
+				return name;
 
-            return new string(characters.ToArray());
-        }
-    }
+			// capitalize first letter
+			List<char> characters = new List<char>();
+			characters.Add(char.ToUpper(name[0]));
+
+			// handle snake case
+			if (name.Contains("_"))
+			{
+				for (int index = 1; index < name.Length; index++)
+				{
+					if (name[index] == '_')
+					{
+						if (index + 1 < name.Length)
+						{
+							index++;
+							characters.Add(char.ToUpper(name[index]));
+						}
+					}
+					else
+					{
+						characters.Add(name[index]);
+					}
+				}
+			}
+			else
+			{
+				characters.AddRange(name.Substring(1).ToArray());
+			}
+
+			return new string(characters.ToArray());
+		}
+	}
 }

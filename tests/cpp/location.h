@@ -1,16 +1,16 @@
 namespace farm
 {
-    struct location
-    {
-        location() = default;
+	struct location
+	{
+		location() = default;
 
-        location(float latitude, float longitude)
-            : latitude{ latitude }
-            , longitude{ longitude }
-        {
-        }
+		location(float latitude, float longitude)
+			: latitude{ latitude }
+			, longitude{ longitude }
+		{
+		}
 
-        float latitude = 0;
-        float longitude = 0;
-    };
+		float latitude = 0;
+		float longitude = 0;
+	};
 }

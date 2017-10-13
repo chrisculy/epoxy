@@ -4,12 +4,12 @@
 
 namespace farm
 {
-    class cow : public animal
-    {
-    public:
-        void speak() const override
-        {
-            std::cout << "Moo!\n";
-        }
-    };
+	class cow : public animal
+	{
+	public:
+		void speak() const override
+		{
+			std::cout << "Moo!\n";
+		}
+	};
 }
