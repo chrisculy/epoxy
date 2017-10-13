@@ -72,7 +72,8 @@ namespace Epoxy.Utility
 		private static bool ResolveType(Graph graph, Element element)
 		{
 			Class classDefinition = graph.Classes.FirstOrDefault(c => c.Name.Equals(element.TypeInfo));
-			if (classDefinition == null)
+			Enumeration enumeration = graph.Enumerations.FirstOrDefault(e => e.Name.Equals(element.TypeInfo));
+			if (classDefinition == null && enumeration == null)
 			{
 				System.Console.Error.WriteLine($"Failed to resolve type {element.TypeInfo}.");
 				return false;
@@ -97,6 +98,10 @@ namespace Epoxy.Utility
 					case "struct":
 						Class newClass = ProcessClass(mainNode);
 						graph.Classes.Add(newClass);
+						break;
+					case "enum":
+						Enumeration enumeration = ProcessEnumeration(mainNode);
+						graph.Enumerations.Add(enumeration);
 						break;
 					case "namespace":
 						string namespaceName = Xml.GetCompoundNodeName(mainNode);
@@ -162,6 +167,20 @@ namespace Epoxy.Utility
 					namedElement.TypeInfo, Xml.GetIsStatic(memberNode), isClassMember, namedElement.IsConstant, namedElement.IsReference,
 					namedElement.IsRawPointer, namedElement.IsSharedPointer, namedElement.IsUniquePointer));
 			}
+		}
+
+		private static Enumeration ProcessEnumeration(XmlNode node)
+		{
+			string fullName = Xml.GetCompoundNodeName(node);
+			string namespaceName = GetNamespaceFromFullyQualifiedName(fullName);
+
+			List<(string name, int value)> values = new List<(string name, int value)>();
+			foreach (XmlNode enumValueNode in node.SelectNodes(Xml.EnumValue))
+			{
+				// TODO: load enum values
+			}
+
+			return new Enumeration(GetNameFromFullyQualifiedName(fullName), namespaceName, values);
 		}
 
 		private static IEnumerable<XmlNode> GetMemberNodes(XmlNode node)

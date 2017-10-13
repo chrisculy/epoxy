@@ -9,6 +9,7 @@ namespace Epoxy.Utility
 		public const string CompoundName = "compoundname";
 		public const string Const = "const";
 		public const string Declname = "declname";
+		public const string EnumValue = "enumvalue";
 		public const string Function = "function";
 		public const string Id = "id";
 		public const string Kind = "kind";
