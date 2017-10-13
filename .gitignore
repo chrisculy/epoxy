@@ -1,2 +1,5 @@
 bin/
 obj/
+
+# ignore generated code
+tests/cs
