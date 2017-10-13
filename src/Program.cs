@@ -14,13 +14,13 @@ namespace Epoxy
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             const string usageMessage = "Usage:\nepoxy <configuration json file>";
             if (args.Length != 1 || args[0] == "-h" || args[0] == "--help")
             { 
                 Console.Error.WriteLine(usageMessage);
-                return;
+                return -1;
             }
 
             string configurationJsonFilePath = args[0];
@@ -33,7 +33,7 @@ namespace Epoxy
                     Console.Error.WriteLine($"Path appears to be relative and the current working directory is '{Directory.GetCurrentDirectory()}'.");
                 }
 
-                return;
+                return -2;
             }
 
             Configuration config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(configurationJsonFilePath));
@@ -45,10 +45,16 @@ namespace Epoxy
                     Console.Error.WriteLine($"Invalid configuration: {message}");
                 }
 
-                return;
+                return -3;
             }
 
             Graph graph = GraphLoader.LoadGraph(Directory.EnumerateFiles(config.DoxygenXmlDirectory).Where(file => Path.GetExtension(file) == ".xml"));
+            if (graph == null)
+            {
+                Console.Error.WriteLine("Failed to load C++ library definitions successfully.");
+                return -4;
+            }
+
             foreach (BinderConfiguration binderConfig in config.Binders)
             {
                 IBinder binder = BinderFactory.GetBinder(binderConfig);
@@ -63,6 +69,7 @@ namespace Epoxy
             }
 
             Console.WriteLine("SUCCESS");
+            return 0;
         }
     }
 }

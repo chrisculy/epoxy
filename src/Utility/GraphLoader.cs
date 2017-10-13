@@ -16,7 +16,70 @@ namespace Epoxy.Utility
                 ProcessXmlFile(graph, xmlFilePath);
             }
 
-            return graph;
+            return ResolveUnresolvedTypes(graph) ? graph : null;
+        }
+
+        private static bool ResolveUnresolvedTypes(Graph graph)
+        {
+            bool unresolvedTypesRemaining = false;
+            foreach (var classDefinition in graph.Classes)
+            {
+                foreach (Function function in classDefinition.Functions)
+                {
+                    if (!function.IsConstructor && !IsDestructor(function) && function.Return.Type == Type.Unresolved)
+                    {
+                        unresolvedTypesRemaining |= !ResolveType(graph, function.Return);
+                    }
+
+                    foreach (NamedElement parameter in function.Parameters.Where(parameter => parameter.Type == Type.Unresolved))
+                    {
+                        unresolvedTypesRemaining |= !ResolveType(graph, parameter);
+                    }
+                }
+
+                foreach (Variable variable in classDefinition.Variables.Where(variable => variable.Type == Type.Unresolved))
+                {
+                    unresolvedTypesRemaining |= !ResolveType(graph, variable);
+                }
+            }
+
+            foreach (Function function in graph.Functions)
+            {
+                if (function.Return.Type == Type.Unresolved)
+                {
+                    unresolvedTypesRemaining |= !ResolveType(graph, function.Return);
+                }
+
+                foreach (NamedElement parameter in function.Parameters.Where(parameter => parameter.Type == Type.Unresolved))
+                {
+                    unresolvedTypesRemaining |= !ResolveType(graph, parameter);
+                }
+            }
+
+            foreach (Variable variable in graph.Variables.Where(variable => variable.Type == Type.Unresolved))
+            {
+                unresolvedTypesRemaining |= !ResolveType(graph, variable);
+            }
+
+            return !unresolvedTypesRemaining;
+        }
+
+        private static bool IsDestructor(Function function)
+        {
+            return function.Name.StartsWith('~');
+        }
+
+        private static bool ResolveType(Graph graph, Element element)
+        {
+            Class classDefinition = graph.Classes.FirstOrDefault(c => c.Name.Equals(element.TypeInfo));
+            if (classDefinition == null)
+            {
+                System.Console.Error.WriteLine($"Failed to resolve type {element.TypeInfo}.");
+                return false;
+            }
+
+            element.Type = Type.Object;
+            return true;
         }
 
         private static void ProcessXmlFile(Graph graph, string xmlFilePath)
@@ -96,7 +159,7 @@ namespace Epoxy.Utility
             if (namedElement != null)
             {
                 apiContainer.Variables.Add(new Variable(namespaceName, namedElement.Name, namedElement.Type,
-                    namedElement.UnresolvedTypeInfo, Xml.GetIsStatic(memberNode), isClassMember, namedElement.IsConstant, namedElement.IsReference,
+                    namedElement.TypeInfo, Xml.GetIsStatic(memberNode), isClassMember, namedElement.IsConstant, namedElement.IsReference,
                     namedElement.IsRawPointer, namedElement.IsSharedPointer, namedElement.IsUniquePointer));
             }
         }
@@ -145,19 +208,22 @@ namespace Epoxy.Utility
             bool isSharedPointer = false;
             bool isUniquePointer = false;
             string typeString = "";
-            foreach (string token in tokens)
+            foreach (string token in tokens.Where(token => !token.IsNullOrEmpty()))
             {
                 if (c_ignoredQualifiers.Contains(token))
                 {
                     continue;
                 }
                 
-                MatchCollection matches = c_smartPointerPattern.Matches(token);
-                if (matches.Count != 0)
+                if (token == "std::unique_ptr<")
                 {
-                    isSharedPointer = matches[0].Value == "std::shared_pointer<";
-                    isUniquePointer = matches[0].Value == "std::unique_ptr<";
-                    typeString = matches[1].Value;
+                    isUniquePointer = true;
+                    continue;
+                }
+                
+                if (token == "std::shared_ptr<")
+                {
+                    isSharedPointer = true;
                     continue;
                 }
 
@@ -176,7 +242,7 @@ namespace Epoxy.Utility
             Element element = GetElement(node);
             string name = Xml.GetName(node) ?? Xml.GetDeclname(node);
 
-            return new NamedElement(name, element.Type, element.UnresolvedTypeInfo, element.IsConstant, element.IsRawPointer, element.IsReference, element.IsSharedPointer, element.IsUniquePointer);
+            return new NamedElement(name, element.Type, element.TypeInfo, element.IsConstant, element.IsRawPointer, element.IsReference, element.IsSharedPointer, element.IsUniquePointer);
         }
 
         private static string GetNameFromFullyQualifiedName(string fullName)
